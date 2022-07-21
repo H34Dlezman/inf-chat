@@ -12,6 +12,7 @@
     console.log("NEW Message:", msgs);
     messages = msgs
     loaded = true
+    document.getElementById("MessageList").scrollTop=document.getElementById("#MessageList").scrollHeight
   })
 
   const sendMessage = () => {
