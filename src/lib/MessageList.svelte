@@ -7,7 +7,8 @@ export let loaded
 
 {#each messages as msg}
 <li>
-<p>{msg}</p>
+	<p>{msg.author}</p>
+	<h2>{msg.message}</h2>
 </li>
 {/each}
 

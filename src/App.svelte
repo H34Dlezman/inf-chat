@@ -9,7 +9,7 @@
   var newMessage = ""
 
   socket.on("msgs", (msgs) => {
-    console.log("NEW Message:", msgs);
+    //console.log("NEW Message:", msgs);
     messages = msgs
     loaded = true
     setTimeout(()=>{document.getElementById("MessageList").scrollTop=document.getElementById("MessageList").scrollHeight}, 500)
