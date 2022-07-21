@@ -67,7 +67,10 @@ main
     padding 12px
     border none
     font-family ChatFont
+    curson grabbing
   
   button
     max-width (chatBoxHeight * 2)
-    cursor pointer
+    cursor all-scroll
+  button:disabled,button[disabled]
+    curson grabbing
