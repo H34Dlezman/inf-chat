@@ -1,11 +1,20 @@
 <script>
 export let messages
+export let loaded
 </script>
 
-<ul>
+<ul id="MessageList">
+
 {#each messages as msg}
 <li>
-{msg}
+<p>{msg}</p>
 </li>
 {/each}
+
+{#if messages.length == 0 && loaded}
+<li>
+	<p>BE DA FURST</p>
+</li>
+{/if}
+
 </ul>
