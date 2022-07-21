@@ -1,6 +1,6 @@
 <script>
   import io from 'socket.io-client'
-  let socket = io(import.meta.env.VITE_MESSAGE)
+  let socket = io(import.meta.env.VITE_SERVER_ADRESS)
   import MessageList from './lib/MessageList.svelte'
   import ChatBox from './lib/ChatBox.svelte'
 
@@ -15,6 +15,7 @@
   })
 
   const sendMessage = () => {
+    if (message=="") return
     console.log("sending New Message", newMessage)
     socket.emit("msg", newMessage)
     newMessage = ""
