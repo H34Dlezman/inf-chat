@@ -15,7 +15,7 @@
   })
 
   const sendMessage = () => {
-    if (message=="") return
+    if (newMessage=="") return
     console.log("sending New Message", newMessage)
     socket.emit("msg", newMessage)
     newMessage = ""
