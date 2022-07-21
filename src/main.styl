@@ -1,8 +1,14 @@
 bg = #222
+solid = #444
+text = #ddd
+ChatFont = "Comic Sans MS", sans-serif
+chatBoxHeight = 70px
 
 * {
   margin 0
   padding 0
+  font-family "Courier New", monospace
+  color text
 }
 
 body
@@ -19,5 +25,49 @@ main
   display flex
   flex-direction column
   justify-content space-around
-  align-items: center;
-  background: bg
+  align-items center
+  background bg
+  
+#MessageList
+  width 100%
+  height 100%
+  
+  *
+     font-family ChatFont
+  
+  li
+    display flex
+    flex-direction column
+    justify-content center
+    min-height chatBoxHeight
+    border-radius (chatBoxHeight / 10)
+    background solid
+    margin 12px
+    padding 12px
+    
+    p
+      width 100%
+      text-align center
+
+#ChatBox
+  width 100%
+  height 10vh
+  max-height chatBoxHeight
+  display flex
+  flex-direction row
+  
+  *
+    flex 1
+    margin 6px
+    border-radius (chatBoxHeight / 25)
+    font-size 24px
+    color bg
+
+  input
+    padding 12px
+    border none
+    font-family ChatFont
+  
+  button
+    max-width (chatBoxHeight * 2)
+    cursor pointer
