@@ -1,6 +1,6 @@
 <script>
   import io from 'socket.io-client'
-  let socket = io("http://localhost:8765")
+  let socket = io(import.meta.env.VITE_MESSAGE)
   import MessageList from './lib/MessageList.svelte'
   import ChatBox from './lib/ChatBox.svelte'
 

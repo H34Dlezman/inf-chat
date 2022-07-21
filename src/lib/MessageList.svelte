@@ -13,7 +13,7 @@ export let loaded
 
 {#if messages.length == 0 && loaded}
 <li>
-	<p>BE DA FURST</p>
+	<p style="color: red;">BE DA FURST</p>
 </li>
 {/if}
 
