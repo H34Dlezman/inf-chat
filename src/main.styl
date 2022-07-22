@@ -6,8 +6,8 @@ ChatFont = "Comic Sans MS", sans-serif
 chatBoxHeight = 70px
 
 mobileScreen = 769px
-mobile = "only screen and (max-width: " + mobileWidth + ")"
-desktop = "only screen and (min-width: " + (mobileWidth + 1) + ")"
+m = "only screen and (max-width: " + mobileWidth + ")"
+d = "only screen and (min-width: " + (mobileWidth + 1) + ")"
 
 * {
   margin 0
@@ -89,7 +89,7 @@ main
   button
     max-width (chatBoxHeight * 2)
     cursor all-scroll
-    @media mobile
+    @media m
       display none
   button:disabled,button[disabled]
     curson grabbing
