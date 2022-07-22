@@ -5,6 +5,10 @@ text = #ddd
 ChatFont = "Comic Sans MS", sans-serif
 chatBoxHeight = 70px
 
+mobileScreen = 769px
+mobile = "only screen and (max-width: " + mobileWidth + ")"
+desktop = "only screen and (min-width: " + (mobileWidth + 1) + ")"
+
 * {
   margin 0
   padding 0
@@ -34,6 +38,9 @@ main
 #MessageList
   width 100%
   overflow-y scroll
+  display flex
+  flex-direction column-reverse
+  margin 6px 0
   
   *
      font-family ChatFont
@@ -45,7 +52,7 @@ main
     min-height chatBoxHeight
     border-radius (chatBoxHeight / 10)
     background solid
-    margin 12px
+    margin 6px 12px
     padding 12px
     position relative
     
@@ -82,5 +89,9 @@ main
   button
     max-width (chatBoxHeight * 2)
     cursor all-scroll
+    @media mobile {
+      display none
+    }
   button:disabled,button[disabled]
     curson grabbing
+  
