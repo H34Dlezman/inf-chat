@@ -13,6 +13,6 @@ const handleKeyPress = (event) => {
 </script>
 
 <div id="ChatBox">
-<input placeholder="me says..." bind:value={message} on:keypress={handleKeyPress} enterkeyhint="send" type="text"/>
+<input placeholder="me says... (🐣 \"@akaNAM\")" bind:value={message} on:keypress={handleKeyPress} enterkeyhint="send" type="text"/>
 <button on:click disabled={message.length==0}>send</button>
 </div>
