@@ -6,7 +6,7 @@ ChatFont = "Comic Sans MS", sans-serif
 chatBoxHeight = 70px
 
 mobileScreen = 769px
-m = "only screen and (max-width: " + mobileWidth + ")"
+pppmbl = "only screen and (max-width: " + mobileWidth + ")"
 d = "only screen and (min-width: " + (mobileWidth + 1) + ")"
 
 * {
@@ -89,7 +89,7 @@ main
   button
     max-width (chatBoxHeight * 2)
     cursor all-scroll
-    @media m
+    @media pppmbl
       display none
   button:disabled,button[disabled]
     curson grabbing
