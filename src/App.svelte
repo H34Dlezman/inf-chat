@@ -38,7 +38,7 @@
       window.localStorage.setItem("author", savedAuthor)
     }
 
-    socket.emit("msg", {message, savedAuthor})
+    socket.emit("msg", {message, author: savedAuthor})
     newMessage = ""
   }
 </script>
