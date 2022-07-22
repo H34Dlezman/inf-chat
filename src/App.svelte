@@ -25,9 +25,11 @@
     if ( (authorInd=message.indexOf("@aka")) >= 0 ) {
       author = message.slice(authorInd+4)
       var authorEnd = author.indexOf(" ")
-      if (authorEnd>=0 )
+      message = message.slice(0, authorInd)
+      if (authorEnd>=0 ) {
+       message =  message + author.slice(authorEnd+1)
        author = author.slice(0, authorEnd)
-      message = message.slice(0, authorInd) + author.slice(authorEnd+1)
+      }
     }
 
     socket.emit("msg", {message, author})
