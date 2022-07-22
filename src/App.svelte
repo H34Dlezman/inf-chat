@@ -12,7 +12,7 @@
     //console.log("NEW Message:", msgs);
     messages = msgs
     loaded = true
-    //setTimeout(()=>{document.getElementById("MessageList").scroll(0,0)}, 50)
+    setTimeout(()=>{document.getElementById("MessageList").scroll(0,0)}, 50)
   })
 
   const sendMessage = () => {
