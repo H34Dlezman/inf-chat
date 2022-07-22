@@ -5,7 +5,7 @@
   import ChatBox from './lib/ChatBox.svelte'
 
   var messages = []
-  var savedAuthor = window.localStorage.getItem("author")
+  var savedAuthor = window.localStorage.getItem("author")? window.localStorage.getItem("author"):""
   var loaded = false
   var newMessage = ""
 
@@ -38,7 +38,7 @@
       window.localStorage.setItem("author", savedAuthor)
     }
 
-    socket.emit("msg", {message, author})
+    socket.emit("msg", {message, savedAuthor})
     newMessage = ""
   }
 </script>
