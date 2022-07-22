@@ -5,9 +5,14 @@
   import ChatBox from './lib/ChatBox.svelte'
 
   var messages = []
-  var savedAuthor = window.localStorage.getItem("author")? window.localStorage.getItem("author"):""
+  var author = window.localStorage.getItem("author")
   var loaded = false
   var newMessage = ""
+
+  if (author == undefined || author == null) {
+    author = ""
+    localStorage.setItem("author", author)
+  }
 
   socket.on("msgs", (msgs) => {
     //console.log("NEW Message:", msgs);
@@ -22,23 +27,23 @@
 
     var message = newMessage
 
-    var author = ""
+    var msgAuthor = ""
     var authorInd = -1
     if ( (authorInd=message.indexOf("@aka")) >= 0 ) {
 
-      author = message.slice(authorInd+4)
-      var authorEnd = author.indexOf(" ")
+      msgAuthor = message.slice(authorInd+4)
+      var authorEnd = msgAuthor.indexOf(" ")
       message = message.slice(0, authorInd)
 
       if (authorEnd>=0 ) {
-       message =  message + author.slice(authorEnd+1)
-       author = author.slice(0, authorEnd)
+       message =  message + msgAuthor.slice(authorEnd+1)
+       msgAuthor = msgAuthor.slice(0, authorEnd)
       }
-      savedAuthor = author
-      window.localStorage.setItem("author", savedAuthor)
+      author = msgAuthor
+      window.localStorage.setItem("author", author)
     }
 
-    socket.emit("msg", {message, author: savedAuthor})
+    socket.emit("msg", {message, author})
     newMessage = ""
   }
 </script>
